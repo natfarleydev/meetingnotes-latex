@@ -15,11 +15,11 @@
 
 \renewcommand\@maketitle{%
 \par\noindent\begin{minipage}[t]{0.6\linewidth}
-  {\Huge\@title\par\smallskip}
-  \@date\\
+  {\Huge\@title\par\smallskip}\\
+  \@date\par\smallskip\\
   \begin{tabular}{@{}ll@{}}
-  Start time: & \@stime\\
-  End time: & \@etime
+    Start time: & \@stime \\
+    End time: & \@etime
   \end{tabular}
 \end{minipage}%
 \fbox{%
