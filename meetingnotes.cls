@@ -1,7 +1,7 @@
 \ProvidesClass{meetingnotes}
 
-\RequirePackage{parskip}
 \RequirePackage{paralist}
+\RequirePackage{xparse}
 \LoadClass{article}
 \ProcessOptions
 
@@ -27,7 +27,7 @@
   \textbf{Attendees}
   \begin{compactitem}\setlength{\leftmargin}{0.1in}
   \@for\temp@a:=\@attlist\do
-    {\item[]  \temp@a}
+    {\item  \temp@a}
   \end{compactitem}
 \end{minipage}}\par\bigskip%
 }
@@ -38,3 +38,6 @@
   \@maketitle%
 \fi%
 }
+
+\NewDocumentCommand\name{m}{#1\marginpar{#1}}
+\NewDocumentCommand\att{m o}{{\bf #1}\IfNoValueTF{#2}{}{ (#2)}}
